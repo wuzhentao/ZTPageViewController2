@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="COW-YT-54H">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="U2t-LH-aMB">
+            <objects>
+                <navigationController id="COW-YT-54H" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5qS-li-lK1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="H3F-IT-1ut"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQa-xw-2D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88" y="254"/>
+        </scene>
+        <!--网易新闻-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ZTPageViewController" customModule="ZTPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DS7-9E-k0N" userLabel="MenuView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wSW-m6-Xxx"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WjV-CS-JTn">
+                                    <size key="itemSize" width="114" height="40"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZTPageMenuViewCellIdentifier" id="Drt-be-6Rh" customClass="ZTPageMenuViewCell" customModule="ZTPageViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="0.0" height="0.0"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSE-gt-DM3">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="WSE-gt-DM3" firstAttribute="leading" secondItem="Drt-be-6Rh" secondAttribute="leading" id="5Qw-KO-kYk"/>
+                                            <constraint firstItem="WSE-gt-DM3" firstAttribute="top" secondItem="Drt-be-6Rh" secondAttribute="top" id="Rzp-1u-fiG"/>
+                                            <constraint firstAttribute="trailing" secondItem="WSE-gt-DM3" secondAttribute="trailing" id="eJU-oe-Qsm"/>
+                                            <constraint firstAttribute="bottom" secondItem="WSE-gt-DM3" secondAttribute="bottom" id="o25-xt-f1v"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="titleLable" destination="WSE-gt-DM3" id="08C-t2-Uug"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="fnX-hB-aeo"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="akx-zh-2VK"/>
+                                </connections>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cA5-gQ-apc" userLabel="PageView">
+                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="VLo-e5-Ipj">
+                                    <size key="itemSize" width="375" height="563"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZTPageCollectionViewCellIdentifier" id="w6u-xN-QUh" customClass="ZTPageCollectionViewCell" customModule="ZTPageViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="5" width="375" height="563"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="563"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="cai-N4-b1A"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="XWb-Cw-osZ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DS7-9E-k0N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3l6-HH-5xC"/>
+                            <constraint firstItem="cA5-gQ-apc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GQo-ks-8BA"/>
+                            <constraint firstItem="cA5-gQ-apc" firstAttribute="top" secondItem="DS7-9E-k0N" secondAttribute="bottom" id="LuJ-EZ-H0l"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cA5-gQ-apc" secondAttribute="bottom" id="UCn-h9-moP"/>
+                            <constraint firstAttribute="trailing" secondItem="DS7-9E-k0N" secondAttribute="trailing" id="dRW-RI-130"/>
+                            <constraint firstAttribute="trailing" secondItem="cA5-gQ-apc" secondAttribute="trailing" id="jcB-nF-tbS"/>
+                            <constraint firstItem="DS7-9E-k0N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yed-H6-Vws"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="网易新闻" id="86U-fI-1vb"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="menuView" destination="DS7-9E-k0N" id="RF9-WN-iRH"/>
+                        <outlet property="pageView" destination="cA5-gQ-apc" id="tgB-Q2-ACe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="497.5" y="252.5"/>
+        </scene>
+    </scenes>
+</document>
